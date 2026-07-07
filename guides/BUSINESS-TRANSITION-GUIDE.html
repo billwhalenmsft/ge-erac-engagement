@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Business Transition Guide — ERAC Lite CRM</title>
+<style>
+:root{
+  --navy:#0B1F3A;--blue:#0078D4;--blue-dk:#106EBE;--bg:#f6f8fb;--surface:#ffffff;
+  --surface-soft:#eef2f7;--border:#dfe5ec;--text:#1f2a37;--muted:#5c6b7a;--soft:#8a97a6;
+  --accent-soft:rgba(0,120,212,0.08);--green:#107c10;
+  --shadow:0 1px 2px rgba(11,31,58,.06),0 8px 24px rgba(11,31,58,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{--blue:#4da6ff;--blue-dk:#7cc0ff;--bg:#0e141b;--surface:#161d26;
+    --surface-soft:#1d2630;--border:#2a3642;--text:#e6edf3;--muted:#9fb0c0;--soft:#6f8090;
+    --accent-soft:rgba(77,166,255,.12);--green:#4ade80;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.62}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#13315c 100%);color:#fff;padding:34px 40px 30px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#9fb4cc;margin-bottom:16px}
+.back:hover{color:#fff;text-decoration:none}
+.ge{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ge .ring{width:38px;height:38px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;letter-spacing:.5px}
+.ge .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fb4cc;font-weight:700}
+.hero h1{font-size:30px;line-height:1.15;margin-bottom:6px}
+.hero p{font-size:15px;color:#c9d6e5;max-width:680px}
+.doc{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:38px 44px;margin:34px 0 48px}
+.doc h1{font-size:26px;font-weight:800;margin:0 0 14px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.doc h2{font-size:20px;font-weight:800;margin:30px 0 10px;color:var(--navy)}
+@media (prefers-color-scheme: dark){.doc h2{color:var(--blue)}}
+.doc h3{font-size:16px;font-weight:700;margin:22px 0 8px}
+.doc p{margin:0 0 13px;color:var(--text)}
+.doc ul,.doc ol{margin:0 0 14px 22px}
+.doc li{margin-bottom:6px}
+.doc strong{color:var(--text)}
+.doc code{font-family:Consolas,"Courier New",monospace;background:var(--surface-soft);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.9em}
+.doc pre{background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0 0 16px}
+.doc pre code{background:none;border:0;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 18px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.doc th{text-align:left;padding:11px 14px;background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+@media (prefers-color-scheme: dark){.doc th{background:#22303f}}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;font-size:14px}
+.doc tr:last-child td{border-bottom:none}
+.doc blockquote{border-left:4px solid var(--blue);background:var(--surface-soft);border-radius:8px;padding:12px 16px;margin:0 0 16px;color:var(--muted)}
+.doc hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+.footer{padding:0 0 40px;text-align:center;font-size:12px;color:var(--soft)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Back to the ERAC hub</a>
+    <div class="ge"><div class="ring">GE</div><div class="lbl">GE Verisk &middot; ERAC &nbsp;&times;&nbsp; Microsoft</div></div>
+    <h1>Business Transition Guide</h1>
+    <p>For business owners &amp; the program lead</p>
+  </div>
+</header>
+<main class="wrap">
+  <article class="doc">
+<h1 id="ge-verisk-erac-lite-crm-business-transition-guide">GE Verisk ERAC — Lite CRM · Business Transition Guide</h1>
+<blockquote>
+<p><strong>Audience:</strong> ERAC business owners (Claims Operations, Actuarial, Legal, Risk) and the sponsoring
+program lead. <strong>Read time:</strong> ~10 minutes. <strong>Companion docs:</strong> <code>TECHNICAL-HANDOFF.md</code> (for your IT /
+implementation team) and <code>PARTNER-TAKEOVER.md</code> (for a systems integrator such as PwC).</p>
+</blockquote>
+<hr />
+<h2 id="1-what-this-is">1. What this is</h2>
+<p>The <strong>ERAC Lite CRM</strong> is a working, install-ready Microsoft Dynamics 365 / Dataverse application that
+gives your reinsurance cedent-management teams <strong>one shared workspace</strong> for the relationships, risk,
+and engagement work that is today spread across spreadsheets, email, and disconnected systems.</p>
+<p>It is delivered as a <strong>self-contained, turnkey solution package</strong> — no dependency on Microsoft's demo
+environment and no custom code you can't own. You (or an implementation partner) import it into your
+own Power Platform environment and it stands up the tables, views, navigation, and app.</p>
+<p>It is called "Lite" deliberately: it delivers the <strong>highest-value 20%</strong> of a full CRM build — cedent
+360°, engagement logging, risk and partnership rating, and a portfolio dashboard — as a <strong>proof
+point you can put in front of real users in days, not quarters</strong>, and then extend.</p>
+<hr />
+<h2 id="2-the-business-outcomes-it-delivers">2. The business outcomes it delivers</h2>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>What changes for the team</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>One cedent 360° view</strong></td>
+<td>Every cedent's profile, tier, partnership rating, contacts, and engagement history in one record — no more hunting across files</td>
+</tr>
+<tr>
+<td><strong>Engagement log with AI summaries</strong></td>
+<td>Meetings and touchpoints captured against the cedent, optionally summarized by Copilot</td>
+</tr>
+<tr>
+<td><strong>Partnership rating (PRR) dashboard</strong></td>
+<td>Portfolio-wide view of partnership health, tiering, and rating trend</td>
+</tr>
+<tr>
+<td><strong>Risk assessment</strong></td>
+<td>Structured risk capture per cedent, visible alongside the relationship</td>
+</tr>
+<tr>
+<td><strong>Engagement Kanban</strong></td>
+<td>Work-in-flight across the team on a stage board, not in someone's inbox</td>
+</tr>
+<tr>
+<td><strong>Portfolio reporting</strong></td>
+<td>Power BI-ready views for leadership reporting</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The one-liner for leadership:</strong> <em>ERAC gets a single, governed system of record for cedent
+relationships — standing up in your own tenant, owned by you, extensible by you or your partner.</em></p>
+<hr />
+<h2 id="3-whats-in-the-box">3. What's in the box</h2>
+<ul>
+<li><strong>The installable solution</strong> — a managed Power Platform solution (<code>.zip</code>) that creates:</li>
+<li>Cedent, contact, engagement, and task extensions on standard Dynamics tables</li>
+<li>Five ERAC-specific tables: <strong>Partnership Rating, Risk Assessment, Treaty, Reserve Adequacy, Dispute</strong></li>
+<li>Pre-built, filtered <strong>views</strong> (e.g. "ERAC Cedents — Active") and <strong>navigation</strong> (the ERAC app)</li>
+<li>Dashboard / analytics <strong>web resources</strong></li>
+<li><strong>Demo/seed data</strong> — a set of illustrative cedents and contacts so the app is not empty on day one
+  (replace with your data during rollout).</li>
+<li><strong>This business guide</strong>, a <strong>technical handoff</strong>, and a <strong>partner takeover guide</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>Note on "Lite":</strong> the Actuarial and Legal deep-dives, treaty/contract integration, and legacy
+data migration are <strong>Phase 2</strong> scope — designed for, but not included in, this package. See §6.</p>
+</blockquote>
+<hr />
+<h2 id="4-how-it-gets-rolled-out-the-shape-not-the-steps">4. How it gets rolled out (the shape, not the steps)</h2>
+<p>Your IT team or partner follows the technical handoff. From a business standpoint the rollout is
+four moves:</p>
+<ol>
+<li><strong>Install</strong> — the package is imported into your Power Platform environment (~30 minutes).</li>
+<li><strong>Connect your identity</strong> — no maker- or demo-specific settings; your team's sign-in and security
+   roles govern access.</li>
+<li><strong>Load your cedents</strong> — replace the seed data with your real cedent portfolio.</li>
+<li><strong>Go live with a pilot team</strong> — one team (e.g. Claims Operations) uses it for real for 2–4 weeks,
+   then you decide what to extend.</li>
+</ol>
+<p><strong>Time to a usable pilot: days.</strong> No new infrastructure — it runs on the Power Platform you already
+license with Dynamics 365 / Microsoft 365.</p>
+<hr />
+<h2 id="5-what-you-own-vs-what-microsoft-provides">5. What you own vs. what Microsoft provides</h2>
+<table>
+<thead>
+<tr>
+<th>You own</th>
+<th>Microsoft provides (platform)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your environment, your data, your security model</td>
+<td>Dynamics 365 / Dataverse / Power Platform</td>
+</tr>
+<tr>
+<td>The solution package (yours to extend or hand to a partner)</td>
+<td>Copilot (optional, for engagement summaries)</td>
+</tr>
+<tr>
+<td>The rollout decisions and pilot scope</td>
+<td>Power BI for reporting</td>
+</tr>
+</tbody>
+</table>
+<p>There is <strong>no lock-in to a Microsoft-run environment</strong>. This is the core design principle of the
+package: it is genericized so it installs cleanly into <em>your</em> tenant and is maintainable by <em>your</em>
+people or <em>your</em> chosen partner.</p>
+<hr />
+<h2 id="6-where-it-goes-next-phase-2-designed-not-yet-built">6. Where it goes next (Phase 2 — designed, not yet built)</h2>
+<p>The Lite CRM is the foundation. The evaluated roadmap:</p>
+<ul>
+<li><strong>Actuarial workspace</strong> — reserving analytics, experience studies, assumption traceability.</li>
+<li><strong>Legal workspace</strong> — treaty contract tracking, legal positions, arbitration dashboard.</li>
+<li><strong>Contract/treaty integration</strong> — read-only treaty/contract data surfaced in CRM views.</li>
+<li><strong>Dataverse-backed everything</strong> — replacing any remaining demo data with governed records.</li>
+<li><strong>Legacy migration</strong> — historical CRM data brought forward.</li>
+<li><strong>Copilot Studio agent</strong> — a natural-language assistant over your live cedent data.</li>
+</ul>
+<p>Because ERAC is being evaluated alongside a <strong>D365 ERP</strong> decision (with PwC), Phase 2 is where the
+CRM and ERP stories converge — see the partner guide for how a systems integrator takes this
+turnkey.</p>
+<hr />
+<h2 id="7-who-to-talk-to">7. Who to talk to</h2>
+<ul>
+<li><strong>Business questions / rollout scope:</strong> your ERAC program lead + your Microsoft account team.</li>
+<li><strong>Install / technical:</strong> hand <code>TECHNICAL-HANDOFF.md</code> to your IT / Power Platform admin.</li>
+<li><strong>Partner-led delivery:</strong> hand <code>PARTNER-TAKEOVER.md</code> to your systems integrator (e.g. PwC).</li>
+</ul>
+<p><em>Prepared by the Microsoft account team as a turnkey handoff. The solution package is yours to own,
+extend, and operate.</em></p>
+  </article>
+</main>
+<div class="footer">Prepared by Microsoft Solution Engineering for GE Verisk &middot; ERAC &middot; ERAC Lite CRM turnkey handoff. &copy; Microsoft 2026.</div>
+</body>
+</html>

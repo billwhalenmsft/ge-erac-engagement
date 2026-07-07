@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Technical Handoff — ERAC Lite CRM</title>
+<style>
+:root{
+  --navy:#0B1F3A;--blue:#0078D4;--blue-dk:#106EBE;--bg:#f6f8fb;--surface:#ffffff;
+  --surface-soft:#eef2f7;--border:#dfe5ec;--text:#1f2a37;--muted:#5c6b7a;--soft:#8a97a6;
+  --accent-soft:rgba(0,120,212,0.08);--green:#107c10;
+  --shadow:0 1px 2px rgba(11,31,58,.06),0 8px 24px rgba(11,31,58,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{--blue:#4da6ff;--blue-dk:#7cc0ff;--bg:#0e141b;--surface:#161d26;
+    --surface-soft:#1d2630;--border:#2a3642;--text:#e6edf3;--muted:#9fb0c0;--soft:#6f8090;
+    --accent-soft:rgba(77,166,255,.12);--green:#4ade80;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.62}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#13315c 100%);color:#fff;padding:34px 40px 30px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#9fb4cc;margin-bottom:16px}
+.back:hover{color:#fff;text-decoration:none}
+.ge{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ge .ring{width:38px;height:38px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;letter-spacing:.5px}
+.ge .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fb4cc;font-weight:700}
+.hero h1{font-size:30px;line-height:1.15;margin-bottom:6px}
+.hero p{font-size:15px;color:#c9d6e5;max-width:680px}
+.doc{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:38px 44px;margin:34px 0 48px}
+.doc h1{font-size:26px;font-weight:800;margin:0 0 14px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.doc h2{font-size:20px;font-weight:800;margin:30px 0 10px;color:var(--navy)}
+@media (prefers-color-scheme: dark){.doc h2{color:var(--blue)}}
+.doc h3{font-size:16px;font-weight:700;margin:22px 0 8px}
+.doc p{margin:0 0 13px;color:var(--text)}
+.doc ul,.doc ol{margin:0 0 14px 22px}
+.doc li{margin-bottom:6px}
+.doc strong{color:var(--text)}
+.doc code{font-family:Consolas,"Courier New",monospace;background:var(--surface-soft);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.9em}
+.doc pre{background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0 0 16px}
+.doc pre code{background:none;border:0;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 18px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.doc th{text-align:left;padding:11px 14px;background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+@media (prefers-color-scheme: dark){.doc th{background:#22303f}}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;font-size:14px}
+.doc tr:last-child td{border-bottom:none}
+.doc blockquote{border-left:4px solid var(--blue);background:var(--surface-soft);border-radius:8px;padding:12px 16px;margin:0 0 16px;color:var(--muted)}
+.doc hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+.footer{padding:0 0 40px;text-align:center;font-size:12px;color:var(--soft)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Back to the ERAC hub</a>
+    <div class="ge"><div class="ring">GE</div><div class="lbl">GE Verisk &middot; ERAC &nbsp;&times;&nbsp; Microsoft</div></div>
+    <h1>Technical Handoff</h1>
+    <p>For your Power Platform administrator</p>
+  </div>
+</header>
+<main class="wrap">
+  <article class="doc">
+<h1 id="ge-verisk-erac-lite-crm-technical-handoff-guide">GE Verisk ERAC — Lite CRM · Technical Handoff Guide</h1>
+<blockquote>
+<p><strong>Audience:</strong> the Power Platform administrator / IT team who will import, own, and operate the ERAC
+Lite CRM. <strong>Companion docs:</strong> <code>BUSINESS-TRANSITION-GUIDE.md</code> (why) and <code>PARTNER-TAKEOVER.md</code> (for an
+SI such as PwC).</p>
+</blockquote>
+<hr />
+<h2 id="1-what-youre-installing">1. What you're installing</h2>
+<p>A <strong>Dynamics 365 / Dataverse model-driven application</strong> — the "ERAC Lite CRM" — delivered as a
+genericized, self-contained Power Platform solution. It has <strong>no dependency on the Microsoft demo
+environment</strong> it was authored in, <strong>no premium connector requirements</strong>, and <strong>no Power Automate
+cloud flows</strong> (engagement AI, if used, is an optional Copilot/Azure Function sidebar — see §6).</p>
+<h3 id="components-created-by-the-solution">Components created by the solution</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard-table extensions</strong></td>
+<td>Custom <code>erac_*</code> columns on <code>account</code>, <code>contact</code>, <code>task</code>, <code>appointment</code> (cedent flags, tier, partnership rating, function, Kanban stage, etc.)</td>
+</tr>
+<tr>
+<td><strong>5 custom tables</strong></td>
+<td><code>erac_partnershiprating</code>, <code>erac_riskassessment</code>, <code>erac_treaty</code>, <code>erac_reserveadequacy</code>, <code>erac_dispute</code></td>
+</tr>
+<tr>
+<td><strong>Views (saved queries)</strong></td>
+<td>Filtered views incl. <strong>"ERAC Cedents — Active"</strong> (<code>erac_iscedent = true AND statecode = 0</code>), ERAC Contacts, and per-table default views</td>
+</tr>
+<tr>
+<td><strong>Sitemap / app</strong></td>
+<td>The <code>ERAC Lite CRM</code> model-driven app + <code>erac_LiteCRM_SiteMap</code> navigation</td>
+</tr>
+<tr>
+<td><strong>Web resources</strong></td>
+<td>Dashboard / analytics HTML+JS resources (portfolio analytics, PRR dashboard)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>The <code>erac_</code> prefix is intentional and stays.</strong> It is <em>solution-based</em> (Enterprise Risk &amp; Advisory
+Consulting), <strong>not</strong> a personal or environment identifier. Everything that <em>did</em> identify the
+source maker/environment (org host, environment GUID, solution GUID, author) has been genericized
+out of the package — that's what makes this installable in your tenant.</p>
+</blockquote>
+<hr />
+<h2 id="2-prerequisites">2. Prerequisites</h2>
+<ol>
+<li>A <strong>Power Platform environment with Dataverse</strong> (a production or trial environment you control).</li>
+<li><strong>System Administrator</strong> or <strong>System Customizer</strong> security role in that environment.</li>
+<li>The <strong><code>erac</code> publisher prefix</strong> is created by the solution import (do not pre-create a conflicting one).</li>
+<li><strong>Dynamics 365 / Power Apps licensing</strong> for the users who will access the app.</li>
+<li><em>(Optional, for the CLI path)</em> Power Platform CLI (<code>pac</code>) authenticated to your environment.</li>
+</ol>
+<p>No on-prem gateway, no premium connector, and no external service dependency are required for the
+core CRM.</p>
+<hr />
+<h2 id="3-install-the-fast-path-power-platform-admin-center">3. Install — the fast path (Power Platform admin center)</h2>
+<ol>
+<li>Go to <strong>make.powerapps.com</strong> → select your target environment.</li>
+<li><strong>Solutions → Import solution → Browse</strong> → select the provided <strong><code>ERACLiteCRM_managed.zip</code></strong>.</li>
+<li>Accept the defaults (no connection references or environment variables need mapping for the core
+   CRM). Click <strong>Import</strong> and wait for completion (~10–30 min depending on environment).</li>
+<li>Open the <strong>ERAC Lite CRM</strong> app from the app list. The navigation, views, and tables are present.</li>
+</ol>
+<h3 id="load-starter-data-optional-but-recommended-for-a-first-look">Load starter data (optional but recommended for a first look)</h3>
+<p>The package ships illustrative seed cedents/contacts so the app isn't empty. To load them into a
+fresh environment, use the provided provisioning script (data phase only):</p>
+<pre><code class="language-powershell">cd customers/ge_erac/dataverse/scripts
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -Phase Data
+</code></pre>
+<p><strong>Before pilot go-live, replace seed data with your real cedent portfolio</strong> (§5).</p>
+<hr />
+<h2 id="4-install-the-scripted-path-for-repeatable-partner-deployments">4. Install — the scripted path (for repeatable / partner deployments)</h2>
+<p>If you prefer infrastructure-as-code over point-and-click, the same environment can be stood up
+from the imperative provisioning scripts (schema → data → UI), which are idempotent and safe to
+re-run:</p>
+<pre><code class="language-powershell">cd customers/ge_erac/dataverse/scripts
+
+# Full stand-up (schema + demo data)
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot;
+
+# Or phase-by-phase
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -Phase Schema
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -Phase Data
+
+# Preview only (no writes)
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -WhatIf
+</code></pre>
+<blockquote>
+<p><strong>Which path to use?</strong> The <strong>managed solution ZIP</strong> is the turnkey, supported handoff — use it for
+the customer's own environment. The <strong>scripts</strong> are the build/repro harness and are how a partner
+reproduces or extends the environment. Both land the same result.</p>
+</blockquote>
+<p>The model-driven <strong>app + sitemap</strong> are part of the exported solution — you do <strong>not</strong> need to
+hand-rebuild them. (They cannot be created via raw API, which is exactly why the package is delivered
+as an <em>exported solution</em> rather than pure scripts.)</p>
+<hr />
+<h2 id="5-post-install-configuration">5. Post-install configuration</h2>
+<ol>
+<li><strong>Assign security roles</strong> — grant your ERAC users access to the app and the <code>erac_*</code> tables via
+   your standard Dataverse security roles.</li>
+<li><strong>Set the default view</strong> — confirm <strong>"ERAC Cedents — Active"</strong> is the default on the Account table
+   (it filters to <code>erac_iscedent = true</code>).</li>
+<li><strong>Load real cedents</strong> — import your cedent portfolio (Excel/Dataverse import or the data script
+   pointed at your source). Tag cedent accounts with <code>erac_iscedent = true</code> so they appear in the
+   filtered views.</li>
+<li><strong>Reporting</strong> — point Power BI at the Dataverse tables for portfolio reporting (the views are
+   already shaped for this).</li>
+</ol>
+<h3 id="the-cedent-filter-important">The cedent filter (important)</h3>
+<p>Every ERAC query is scoped by the cedent flag. When you build reports, flows, or integrations, filter
+on it:</p>
+<pre><code>$filter=erac_iscedent eq true and statecode eq 0
+</code></pre>
+<p>Example — all active cedents, richest columns:</p>
+<pre><code>GET /api/data/v9.2/accounts?$select=accountid,name,erac_partnershiptype,erac_tier,erac_overallrating&amp;$filter=erac_iscedent eq true and statecode eq 0&amp;$orderby=erac_overallrating desc
+</code></pre>
+<hr />
+<h2 id="6-optional-the-copilot-engagement-ai-sidebar">6. Optional — the Copilot / engagement-AI sidebar</h2>
+<p>The engagement log can be augmented with AI-generated summaries. This is delivered as an <strong>optional
+Azure Function + Copilot sidebar</strong>, <em>not</em> as a Power Automate flow, and is <strong>not required</strong> for the
+core CRM. If your team wants it:</p>
+<ul>
+<li>Deploy the Azure Function (see the ERAC repo's function app) and set its Dataverse OData endpoint
+  to <strong>your</strong> org host via environment variables — the package ships <strong>no</strong> hard-coded org host.</li>
+<li>Or replace it with a <strong>Copilot Studio agent</strong> connected to Dataverse via the built-in connector
+  (no custom API), surfaced in the app's Copilot pane.</li>
+</ul>
+<p>Either way, this layer reads live Dataverse data and does not change the core schema.</p>
+<hr />
+<h2 id="7-what-was-genericized-so-you-can-trust-the-install">7. What was genericized (so you can trust the install)</h2>
+<p>The package was run through an automated <strong>genericize → validate → leak-check → pack</strong> harness before
+release. It scrubs every source-environment identifier and <strong>fails the build if any survives</strong>:</p>
+<ul>
+<li>Source org host (<code>*.crm.dynamics.com</code>) → your env via env-vars / relative paths</li>
+<li>Source environment GUID, solution GUID → regenerated on import into your tenant</li>
+<li>Author / maker identifiers → removed</li>
+<li>Source repo references → removed</li>
+</ul>
+<p>What is deliberately <strong>kept</strong>: the <code>erac_</code> schema prefix, table/column/view/app names — because those
+describe the <em>solution</em>, not the <em>author</em>. This is the "solution-based naming, not personal naming"
+principle.</p>
+<hr />
+<h2 id="8-verifying-the-install">8. Verifying the install</h2>
+<ul>
+<li>[ ] Solution import completed with no errors.</li>
+<li>[ ] <strong>ERAC Lite CRM</strong> app opens; sitemap shows Cedents &amp; Contacts, Engagement, Risk &amp; Partnership,
+      Actuarial, Legal, Analytics.</li>
+<li>[ ] Account table has the <code>erac_*</code> columns; <strong>"ERAC Cedents — Active"</strong> view returns rows.</li>
+<li>[ ] The 5 custom tables (<code>erac_partnershiprating</code>, <code>erac_riskassessment</code>, <code>erac_treaty</code>,
+      <code>erac_reserveadequacy</code>, <code>erac_dispute</code>) exist and open.</li>
+<li>[ ] Dashboard/analytics web resources render.</li>
+<li>[ ] No reference to a source org host or author anywhere in the app (search a web resource if in
+      doubt).</li>
+</ul>
+<p>If all boxes pass, the environment is a clean, owned install.</p>
+<hr />
+<h2 id="9-support-extension">9. Support &amp; extension</h2>
+<ul>
+<li><strong>Extend it yourself</strong> — add columns/tables/views in your own solution layered on top; keep ERAC
+  as the base.</li>
+<li><strong>Hand it to a partner</strong> — give them <code>PARTNER-TAKEOVER.md</code>; the scripted path (§4) is how they
+  reproduce and extend the environment turnkey.</li>
+<li><strong>File map</strong> — see <code>customers/ge_erac/dataverse/</code> (<code>config/schema.json</code> = full table/column/view/
+  sitemap definitions; <code>scripts/</code> = provisioners; <code>solution/</code> = the exported + genericized package
+  and the <code>genericize_and_build.py</code> harness).</li>
+</ul>
+<p><em>Prepared by the Microsoft account team. The solution and its build harness are yours to own and
+operate.</em></p>
+  </article>
+</main>
+<div class="footer">Prepared by Microsoft Solution Engineering for GE Verisk &middot; ERAC &middot; ERAC Lite CRM turnkey handoff. &copy; Microsoft 2026.</div>
+</body>
+</html>

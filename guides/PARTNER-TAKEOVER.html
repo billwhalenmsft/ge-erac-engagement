@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Partner Takeover — ERAC Lite CRM</title>
+<style>
+:root{
+  --navy:#0B1F3A;--blue:#0078D4;--blue-dk:#106EBE;--bg:#f6f8fb;--surface:#ffffff;
+  --surface-soft:#eef2f7;--border:#dfe5ec;--text:#1f2a37;--muted:#5c6b7a;--soft:#8a97a6;
+  --accent-soft:rgba(0,120,212,0.08);--green:#107c10;
+  --shadow:0 1px 2px rgba(11,31,58,.06),0 8px 24px rgba(11,31,58,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{--blue:#4da6ff;--blue-dk:#7cc0ff;--bg:#0e141b;--surface:#161d26;
+    --surface-soft:#1d2630;--border:#2a3642;--text:#e6edf3;--muted:#9fb0c0;--soft:#6f8090;
+    --accent-soft:rgba(77,166,255,.12);--green:#4ade80;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.62}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#13315c 100%);color:#fff;padding:34px 40px 30px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.back{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#9fb4cc;margin-bottom:16px}
+.back:hover{color:#fff;text-decoration:none}
+.ge{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ge .ring{width:38px;height:38px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;letter-spacing:.5px}
+.ge .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fb4cc;font-weight:700}
+.hero h1{font-size:30px;line-height:1.15;margin-bottom:6px}
+.hero p{font-size:15px;color:#c9d6e5;max-width:680px}
+.doc{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:38px 44px;margin:34px 0 48px}
+.doc h1{font-size:26px;font-weight:800;margin:0 0 14px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.doc h2{font-size:20px;font-weight:800;margin:30px 0 10px;color:var(--navy)}
+@media (prefers-color-scheme: dark){.doc h2{color:var(--blue)}}
+.doc h3{font-size:16px;font-weight:700;margin:22px 0 8px}
+.doc p{margin:0 0 13px;color:var(--text)}
+.doc ul,.doc ol{margin:0 0 14px 22px}
+.doc li{margin-bottom:6px}
+.doc strong{color:var(--text)}
+.doc code{font-family:Consolas,"Courier New",monospace;background:var(--surface-soft);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:.9em}
+.doc pre{background:var(--surface-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0 0 16px}
+.doc pre code{background:none;border:0;padding:0}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 18px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.doc th{text-align:left;padding:11px 14px;background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+@media (prefers-color-scheme: dark){.doc th{background:#22303f}}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;font-size:14px}
+.doc tr:last-child td{border-bottom:none}
+.doc blockquote{border-left:4px solid var(--blue);background:var(--surface-soft);border-radius:8px;padding:12px 16px;margin:0 0 16px;color:var(--muted)}
+.doc hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+.footer{padding:0 0 40px;text-align:center;font-size:12px;color:var(--soft)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Back to the ERAC hub</a>
+    <div class="ge"><div class="ring">GE</div><div class="lbl">GE Verisk &middot; ERAC &nbsp;&times;&nbsp; Microsoft</div></div>
+    <h1>Partner Takeover</h1>
+    <p>For a systems integrator (e.g. PwC)</p>
+  </div>
+</header>
+<main class="wrap">
+  <article class="doc">
+<h1 id="ge-verisk-erac-lite-crm-partner-takeover-guide">GE Verisk ERAC — Lite CRM · Partner Takeover Guide</h1>
+<blockquote>
+<p><strong>Audience:</strong> a systems integrator or delivery partner (e.g. <strong>PwC</strong>) taking the ERAC Lite CRM
+turnkey — to operate, extend, or fold into a broader D365 program. <strong>Companion docs:</strong>
+<code>BUSINESS-TRANSITION-GUIDE.md</code> (business context) and <code>TECHNICAL-HANDOFF.md</code> (install + schema).</p>
+</blockquote>
+<hr />
+<h2 id="1-purpose-of-this-guide">1. Purpose of this guide</h2>
+<p>You are receiving a <strong>complete, self-contained Power Platform solution</strong> plus its <strong>build harness</strong>.
+The intent is a <strong>turnkey takeover</strong>: you can stand this up in the customer's environment, own it,
+and extend it — <strong>without needing the original author, the original demo tenant, or any hidden
+dependency</strong>. This guide tells you exactly what you're getting, how to reproduce it, and where the
+extension seams are.</p>
+<p>This mirrors how other Microsoft turnkey accelerators are handed to partners (the same
+genericize-and-build discipline used for the SAP Procurement and Ascend accelerators).</p>
+<hr />
+<h2 id="2-what-turnkey-means-here-the-guarantees">2. What "turnkey" means here (the guarantees)</h2>
+<table>
+<thead>
+<tr>
+<th>Guarantee</th>
+<th>How it's assured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installs in the customer's own tenant</strong></td>
+<td>All source-env identifiers (org host, environment GUID, solution GUID, author) are genericized out; regenerated on import</td>
+</tr>
+<tr>
+<td><strong>No hidden dependencies</strong></td>
+<td>Core CRM has <strong>no premium connectors, no cloud flows, no external service</strong> required</td>
+</tr>
+<tr>
+<td><strong>Reproducible from source</strong></td>
+<td>An idempotent, phase-based provisioning harness rebuilds the environment from scratch</td>
+</tr>
+<tr>
+<td><strong>Verified before release</strong></td>
+<td>An automated <strong>leak-check fails the build</strong> if any identifying token survives genericization</td>
+</tr>
+<tr>
+<td><strong>Solution-based naming</strong></td>
+<td>The <code>erac_</code> prefix describes the solution (Enterprise Risk &amp; Advisory Consulting), not a person — safe to keep</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-the-architecture-youre-taking-over">3. The architecture you're taking over</h2>
+<pre><code>┌─────────────────────────────┐
+│  ERAC Lite CRM (MDA)        │  ← Users work here (native D365 chrome)
+│  sitemap: Cedents · Engage  │
+│  · Risk · Actuarial · Legal │
+│  · Analytics                │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│  Dataverse                  │  ← System of record (all data)
+│  • account/contact/task/    │
+│    appointment + erac_* cols│
+│  • 5 custom erac_ tables    │
+│  • filtered views (cedent)  │
+└──────────────┬──────────────┘
+               │ (optional)
+               ▼
+┌─────────────────────────────┐
+│  Copilot / Azure Function   │  ← OPTIONAL engagement-AI sidebar
+│  (reads live Dataverse)     │     — not required for core CRM
+└─────────────────────────────┘
+</code></pre>
+<p><strong>No Power Automate layer.</strong> Unlike flow-based accelerators, ERAC's optional intelligence is a
+Copilot/Function sidebar, so there are <strong>no unpackaged connection references</strong> to remediate on import
+— the single most common cause of failed accelerator installs simply does not apply here.</p>
+<h3 id="schema-at-a-glance">Schema at a glance</h3>
+<ul>
+<li><strong>Extended standard tables:</strong> <code>account</code>, <code>contact</code>, <code>task</code>, <code>appointment</code> (with <code>erac_*</code> columns:
+  cedent flag, tier, partnership/PRR rating, function, Kanban stage, engagement fields).</li>
+<li><strong>Custom tables:</strong> <code>erac_partnershiprating</code>, <code>erac_riskassessment</code>, <code>erac_treaty</code>,
+  <code>erac_reserveadequacy</code>, <code>erac_dispute</code>.</li>
+<li><strong>Cedent scoping:</strong> everything filters on <code>erac_iscedent eq true</code>.</li>
+<li>Full definitions: <code>customers/ge_erac/dataverse/config/schema.json</code>.</li>
+</ul>
+<hr />
+<h2 id="4-two-ways-to-deploy-pick-per-engagement">4. Two ways to deploy (pick per engagement)</h2>
+<h3 id="4a-managed-solution-import-recommended-for-the-customers-environment">4a. Managed solution import (recommended for the customer's environment)</h3>
+<p>Import <code>ERACLiteCRM_managed.zip</code> via <code>make.powerapps.com</code> → Solutions → Import. This is the
+supported, upgrade-friendly path. See <code>TECHNICAL-HANDOFF.md</code> §3.</p>
+<h3 id="4b-scripted-reproduction-recommended-for-your-devtest-extension-work">4b. Scripted reproduction (recommended for your dev/test + extension work)</h3>
+<p>Rebuild the whole environment from the idempotent provisioner:</p>
+<pre><code class="language-powershell">cd customers/ge_erac/dataverse/scripts
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot;           # full
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -Phase Schema
+.\Provision-EracDataverse.ps1 -OrgUrl &quot;https://YOUR-ORG.crm.dynamics.com&quot; -WhatIf   # dry run
+</code></pre>
+<p>Use <strong>4a</strong> to deliver to the customer; use <strong>4b</strong> to reproduce, diff, and extend safely.</p>
+<hr />
+<h2 id="5-rebuilding-re-genericizing-the-package-yourself">5. Rebuilding / re-genericizing the package yourself</h2>
+<p>If you extend the solution and need to re-cut a clean, genericized package, the build harness is
+included:</p>
+<pre><code class="language-powershell"># 1. Export + unpack the solution from your build environment
+pac solution export --path ./out --name ERACLiteCRM --managed false
+pac solution export --path ./out --name ERACLiteCRM --managed true
+pac solution unpack --zipfile ./out/ERACLiteCRM.zip --folder ./solution_src
+
+# 2. Genericize → validate → leak-check → pack (fails if any identity survives)
+python customers/ge_erac/dataverse/solution/genericize_and_build.py
+</code></pre>
+<p>The harness runs three disciplines in order — <strong>genericize</strong> (scrub the identifier map), <strong>validate</strong>
+(OPC namespaces / ImportExportXml / inline entities — the ZIP-killers), and <strong>leak-check</strong> (build
+fails if a source identifier survives) — then packs the shippable ZIP. This is the same pattern used
+across Microsoft's turnkey accelerators.</p>
+<hr />
+<h2 id="6-prove-the-install-the-reliability-gate">6. Prove the install (the reliability gate)</h2>
+<p>Before you hand the package to the customer as final, prove it installs cleanly:</p>
+<ol>
+<li><strong>Import into a fresh trial org</strong> (not your build env) via §4a.</li>
+<li><strong>Verify</strong> against <code>TECHNICAL-HANDOFF.md</code> §8 (app opens, views return rows, all 5 tables present,
+   no source identifiers).</li>
+<li><strong>Repeat on a second fresh org</strong> — reliable means repeatable, not a one-off.</li>
+</ol>
+<p>Only after a clean import on an environment that never saw the source is the package "proven."</p>
+<hr />
+<h2 id="7-extension-seams-where-to-build-phase-2">7. Extension seams (where to build Phase 2)</h2>
+<table>
+<thead>
+<tr>
+<th>Phase 2 workstream</th>
+<th>Seam</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actuarial workspace</strong></td>
+<td><code>erac_reserveadequacy</code> table + Analytics area</td>
+<td>Reserving analytics, experience studies</td>
+</tr>
+<tr>
+<td><strong>Legal workspace</strong></td>
+<td><code>erac_treaty</code> + <code>erac_dispute</code> tables + Legal area</td>
+<td>Treaty tracking, arbitration dashboard</td>
+</tr>
+<tr>
+<td><strong>Contract/treaty integration</strong></td>
+<td>Read-only views over an external contract system</td>
+<td>Surface treaty/contract data in CRM</td>
+</tr>
+<tr>
+<td><strong>Copilot Studio agent</strong></td>
+<td>Dataverse built-in connector</td>
+<td>NL assistant over live cedent data — no custom API</td>
+</tr>
+<tr>
+<td><strong>Legacy migration</strong></td>
+<td>Dataverse import / dataflows</td>
+<td>Bring historical CRM data forward</td>
+</tr>
+<tr>
+<td><strong>ERP convergence</strong></td>
+<td>Dataverse ↔ D365 ERP</td>
+<td>See §8 — the PwC ERP evaluation</td>
+</tr>
+</tbody>
+</table>
+<p>Build Phase 2 in a <strong>layered solution on top of ERAC</strong>, not by editing the base — this keeps upgrades
+clean.</p>
+<hr />
+<h2 id="8-the-erp-context-why-this-matters-to-a-pwc-led-program">8. The ERP context (why this matters to a PwC-led program)</h2>
+<p>ERAC is being evaluated <strong>alongside a Dynamics 365 ERP decision</strong> in which the partner is engaged.
+The Lite CRM is deliberately the <strong>relationship / front-office</strong> system of record; the ERP program is
+the <strong>back-office</strong> transformation. The convergence points a partner should plan for:</p>
+<ul>
+<li><strong>Shared party/account master</strong> — cedent accounts in CRM ↔ business partners in ERP.</li>
+<li><strong>Dataverse as the common fabric</strong> — both sit on Power Platform, so integration is native, not
+  point-to-point.</li>
+<li><strong>One security &amp; identity model</strong> — the customer's Entra tenant governs both.</li>
+</ul>
+<p>Taking the CRM turnkey now gives the program a <strong>live front-office proof point</strong> while the ERP
+evaluation proceeds — and a clean base to converge into.</p>
+<hr />
+<h2 id="9-handoff-checklist">9. Handoff checklist</h2>
+<ul>
+<li>[ ] You have the managed <strong>and</strong> unmanaged solution ZIPs.</li>
+<li>[ ] You have the provisioning scripts (<code>customers/ge_erac/dataverse/scripts/</code>) and the build harness
+      (<code>.../solution/genericize_and_build.py</code>).</li>
+<li>[ ] You have <code>config/schema.json</code> (full definitions) and all three guides.</li>
+<li>[ ] You've proven a clean import on a fresh org (§6).</li>
+<li>[ ] Security roles, real-data load, and reporting are planned with the customer.</li>
+<li>[ ] Phase 2 scope agreed and slated as a layered solution.</li>
+</ul>
+<p><em>Prepared by the Microsoft account team as a turnkey partner handoff. The solution, its build harness,
+and this documentation are yours to operate and extend on the customer's behalf.</em></p>
+  </article>
+</main>
+<div class="footer">Prepared by Microsoft Solution Engineering for GE Verisk &middot; ERAC &middot; ERAC Lite CRM turnkey handoff. &copy; Microsoft 2026.</div>
+</body>
+</html>
