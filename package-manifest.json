@@ -1,14 +1,14 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "package": "GE ERAC Lite CRM delivery candidate",
-  "version": "2026.08.25-rc2",
-  "generated_utc": "2026-08-25T17:44:13.3870000+00:00",
+  "version": "2026.08.25",
+  "generated_utc": "2026-08-25T20:10:00Z",
   "solution": {
     "unique_name": "GEERACLiteCRM",
     "friendly_name": "GE ERAC Lite CRM",
     "version": "1.0.0.1"
   },
-  "release_state": "validated-publication-approval-pending",
+  "release_state": "published-customer-guided-handoff",
   "structural_validation": {
     "managed_missing_dependencies": 0,
     "unmanaged_missing_dependencies": 0,
@@ -38,7 +38,7 @@
       "entry_count": 34,
       "purpose": "Governed managed import/update artifact.",
       "recommended_audience": "Customer Power Platform administrator",
-      "release_state": "validated-publication-approval-pending",
+      "release_state": "published-governed-target",
       "import_order": 1
     },
     {
@@ -48,7 +48,7 @@
       "entry_count": 34,
       "purpose": "Partner extension and source-solution artifact.",
       "recommended_audience": "Implementation partner development team",
-      "release_state": "validated-partner-development-only",
+      "release_state": "published-partner-development-only",
       "import_order": null
     },
     {
@@ -58,7 +58,7 @@
       "entry_count": 202,
       "purpose": "Sanitized exact source, design references, and validation tooling.",
       "recommended_audience": "Implementation partner engineering team",
-      "release_state": "validated-reviewable",
+      "release_state": "published-reviewable",
       "import_order": null
     }
   ]

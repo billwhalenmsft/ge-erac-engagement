@@ -69,11 +69,11 @@
     overlay.innerHTML = `
       <div class="erac-gate-card" role="dialog" aria-modal="true" aria-labelledby="erac-gate-title">
         <div class="erac-gate-band">
-          <h2 id="erac-gate-title">ERAC Lite CRM delivery candidate</h2>
-          <p>Enter the separately shared passphrase to open this local review package.</p>
+          <h2 id="erac-gate-title">ERAC Lite CRM resource center</h2>
+          <p>Enter the passphrase shared by your Microsoft team.</p>
         </div>
         <div class="erac-gate-body">
-          <p>This is a soft review gate, not strong security.</p>
+          <p>This site includes the delivery package and guided install steps.</p>
           <label for="erac-gate-input">Passphrase</label>
           <input class="erac-gate-input" id="erac-gate-input" type="password" autocomplete="off">
           <button class="erac-gate-button" id="erac-gate-button" type="button">Open package</button>
