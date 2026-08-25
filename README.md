@@ -1,15 +1,11 @@
-# ERAC Lite CRM — Engagement Hub (GE Verisk · ERAC)
+# GE ERAC Lite CRM delivery candidate
 
-Customer-facing leave-behind for the ERAC Lite CRM walkthrough: a 2-minute narrated
-recap, the screen-by-screen deck, and a "what changed since your feedback" summary.
+This static package is a local publication preview for the existing approved GitHub Pages lane. It has not been published or pushed.
 
-- **Open the hub:** https://billwhalenmsft.github.io/ge-erac-engagement/
+**Release state:** structurally validated. Managed and unmanaged version `1.0.0.1` exports each contain exactly zero `MissingDependency` nodes. The exact managed hash completed a normal non-destructive update in a pre-provisioned Primary CE environment with no import error and unchanged record IDs/counts.
 
-## Contents
-- `index.html` — the engagement hub (recap video + deck + "we heard you" + feedback)
-- `video/erac-recap-narrated.mp4` + `.vtt` — narrated recap with captions
-- `ppt/GE-ERAC-Walkthrough.pptx` — screen-by-screen walkthrough deck
+That evidence is a managed-update test, not a clean-first-install claim. Static zero-dependency validation is the separate portability evidence. Normal update semantics can retain legacy managed components already present in a target.
 
-Prepared by Microsoft Solution Engineering for GE Verisk · ERAC. Unlisted (noindex);
-may be retired after the feedback window. Some metric values are illustrative pending
-connection to live data sources.
+No demo/customer data is included. The site has no telemetry, forms, external scripts, or remote fonts. Existing recap-video and walkthrough-deck links are unchanged.
+
+Publication, access, expiry, passphrase, registry, and customer sharing remain separate approval gates.
