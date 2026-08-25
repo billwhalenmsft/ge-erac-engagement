@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.1",
+  "package": "GE ERAC Lite CRM delivery candidate",
+  "version": "2026.08.25-rc2",
+  "generated_utc": "2026-08-25T17:44:13.3870000+00:00",
+  "solution": {
+    "unique_name": "GEERACLiteCRM",
+    "friendly_name": "GE ERAC Lite CRM",
+    "version": "1.0.0.1"
+  },
+  "release_state": "validated-publication-approval-pending",
+  "structural_validation": {
+    "managed_missing_dependencies": 0,
+    "unmanaged_missing_dependencies": 0,
+    "root_components": 42,
+    "app_entities": 10,
+    "selected_views": 7,
+    "selected_forms": 1,
+    "html_resources": 13,
+    "icons": 17
+  },
+  "managed_update_evidence": {
+    "status": "pass",
+    "label": "normal managed update in pre-provisioned Primary CE; not a clean first install",
+    "from_version": "1.0.0.0",
+    "to_version": "1.0.0.1",
+    "pac_exit_code": 0,
+    "import_status": "Succeeded",
+    "record_ids_preserved": true
+  },
+  "clean_first_install": "not-run/not-claimed",
+  "demo_data": "not-included-external-use-provenance-not-established",
+  "artifacts": [
+    {
+      "file": "ERACLiteCRM_managed.zip",
+      "bytes": 141342,
+      "sha256": "50984d76b2fcd41c5f58d22d42211a5e02a38f1828975cd9e4a74db794cb2afc",
+      "entry_count": 34,
+      "purpose": "Governed managed import/update artifact.",
+      "recommended_audience": "Customer Power Platform administrator",
+      "release_state": "validated-publication-approval-pending",
+      "import_order": 1
+    },
+    {
+      "file": "ERACLiteCRM_unmanaged.zip",
+      "bytes": 141561,
+      "sha256": "349216b2b62fd218e406e0a9356e89d00602bd2b898e7f2fa1dbe2d52a8e2511",
+      "entry_count": 34,
+      "purpose": "Partner extension and source-solution artifact.",
+      "recommended_audience": "Implementation partner development team",
+      "release_state": "validated-partner-development-only",
+      "import_order": null
+    },
+    {
+      "file": "ERACLiteCRM_source-kit.zip",
+      "bytes": 343248,
+      "sha256": "895db58a4aa00869c9eab5c38ce5ab7f62d0cb343b25d0d7164cc92367d915ed",
+      "entry_count": 202,
+      "purpose": "Sanitized exact source, design references, and validation tooling.",
+      "recommended_audience": "Implementation partner engineering team",
+      "release_state": "validated-reviewable",
+      "import_order": null
+    }
+  ]
+}
