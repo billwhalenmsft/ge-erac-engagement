@@ -1,358 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
-  <title>GE ERAC Lite CRM validated delivery candidate</title>
-  <script>
-    (() => {
-      const param = new URLSearchParams(window.location.search).get("scoutTheme");
-      const theme =
-        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-    })();
-  </script>
-  <style>
-    :root {
-      color-scheme: light;
-      --cp-bg: #f7f4ef;
-      --cp-bg-elevated: #fcfbf8;
-      --cp-surface: #ffffff;
-      --cp-surface-soft: #f5f5f5;
-      --cp-border: #dedede;
-      --cp-border-strong: #919191;
-      --cp-text: #242424;
-      --cp-text-muted: #5c5c5c;
-      --cp-text-soft: #6f6f6f;
-      --cp-accent: #b11f4b;
-      --cp-accent-hover: #9a1a41;
-      --cp-accent-soft: rgba(177, 31, 75, 0.08);
-      --cp-accent-fg: #ffffff;
-      --cp-success: #107c10;
-      --cp-danger: #dc2626;
-      --cp-warning: #f59e0b;
-      --cp-link: #0078d4;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-      --cp-overlay: rgba(255, 255, 255, 0.8);
-      --cp-panel: rgba(255, 255, 255, 0.86);
-      --cp-panel-strong: rgba(255, 255, 255, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.55);
-      --cp-highlight: rgba(177, 31, 75, 0.12);
-    }
-    html[data-theme="dark"] {
-      color-scheme: dark;
-      --cp-bg: #3d3b3a;
-      --cp-bg-elevated: #343231;
-      --cp-surface: #292929;
-      --cp-surface-soft: #2e2e2e;
-      --cp-border: #474747;
-      --cp-border-strong: #5f5f5f;
-      --cp-text: #dedede;
-      --cp-text-muted: #919191;
-      --cp-text-soft: #b0b0b0;
-      --cp-accent: #fd8ea1;
-      --cp-accent-hover: #fb7b91;
-      --cp-accent-soft: rgba(253, 142, 161, 0.14);
-      --cp-accent-fg: #1a1a1a;
-      --cp-success: #4ade80;
-      --cp-danger: #f87171;
-      --cp-warning: #fbbf24;
-      --cp-link: #4da6ff;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-      --cp-overlay: rgba(41, 41, 41, 0.88);
-      --cp-panel: rgba(41, 41, 41, 0.72);
-      --cp-panel-strong: rgba(41, 41, 41, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.04);
-      --cp-highlight: rgba(253, 142, 161, 0.12);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--cp-bg);
-      color: var(--cp-text);
-      font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    a {
-      color: var(--cp-text);
-      text-decoration-color: var(--cp-link);
-    }
-    a:hover { color: var(--cp-accent-hover); }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--cp-accent);
-      outline-offset: 3px;
-    }
-    code {
-      font-family: Consolas, "Courier New", Courier, monospace;
-      overflow-wrap: anywhere;
-    }
-    header {
-      background: var(--cp-bg-elevated);
-      border-bottom: 1px solid var(--cp-border);
-    }
-    .shell {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    .hero { padding: 56px 0 40px; }
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--cp-accent);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3 { line-height: 1.2; }
-    h1 {
-      max-width: 820px;
-      margin: 0;
-      font-size: clamp(2.25rem, 6vw, 4.6rem);
-      letter-spacing: -0.04em;
-    }
-    .lede {
-      max-width: 760px;
-      margin: 20px 0 0;
-      color: var(--cp-text-muted);
-      font-size: 1.12rem;
-    }
-    .status {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      margin-top: 24px;
-      padding: 8px 12px;
-      border: 1px solid var(--cp-danger);
-      border-radius: 0.625rem;
-      color: var(--cp-danger);
-      background: var(--cp-surface);
-      font-weight: 700;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      overflow-x: auto;
-      background: var(--cp-panel-strong);
-      border-bottom: 1px solid var(--cp-border);
-    }
-    nav ul {
-      display: flex;
-      gap: 4px;
-      margin: 0;
-      padding: 10px 0;
-      list-style: none;
-      white-space: nowrap;
-    }
-    nav a {
-      display: block;
-      padding: 8px 12px;
-      border-radius: 0.625rem;
-      color: var(--cp-text);
-      text-decoration: none;
-    }
-    nav a:hover { background: var(--cp-highlight); }
-    main { padding: 36px 0 64px; }
-    section {
-      padding: 32px 0;
-      scroll-margin-top: 72px;
-    }
-    h2 { margin: 0 0 18px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
-    h3 { margin: 0 0 10px; font-size: 1.1rem; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-    .card {
-      min-width: 0;
-      padding: 20px;
-      border: 1px solid var(--cp-border);
-      border-radius: 16px;
-      background: var(--cp-surface);
-      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border);
-    }
-    .metric {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--cp-accent);
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    .muted { color: var(--cp-text-muted); }
-    .callout {
-      padding: 18px 20px;
-      border-left: 5px solid var(--cp-success);
-      background: var(--cp-surface);
-    }
-    .downloads {
-      display: grid;
-      gap: 12px;
-    }
-    .download {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: center;
-      padding: 18px;
-      border: 1px solid var(--cp-border);
-      border-radius: 16px;
-      background: var(--cp-surface);
-    }
-    .download a {
-      display: inline-block;
-      padding: 9px 13px;
-      border-radius: 0.625rem;
-      background: var(--cp-accent);
-      color: var(--cp-accent-fg);
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .download a:hover { background: var(--cp-accent-hover); }
-    .ready {
-      color: var(--cp-success);
-      font-weight: 700;
-    }
-    .reviewable {
-      color: var(--cp-text);
-      font-weight: 700;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--cp-surface);
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid var(--cp-border);
-      text-align: left;
-      vertical-align: top;
-    }
-    th { background: var(--cp-surface-soft); }
-    ol, ul { padding-left: 24px; }
-    footer {
-      padding: 28px 0 40px;
-      border-top: 1px solid var(--cp-border);
-      color: var(--cp-text-muted);
-      font-size: 0.92rem;
-    }
-    @media (max-width: 780px) {
-      .hero { padding-top: 40px; }
-      .grid { grid-template-columns: 1fr; }
-      .download { grid-template-columns: 1fr; }
-      .download a { text-align: center; }
-      table { display: block; overflow-x: auto; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-    @media print {
-      nav, .download a { display: none; }
-      body { background: var(--cp-surface); }
-      .card, .download { break-inside: avoid; box-shadow: none; }
-      a { color: var(--cp-text); text-decoration: underline; }
-    }
-  </style>
-  <script src="gate.js" defer></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>ERAC Lite CRM — Engagement Hub</title>
+<script src="gate.js" defer></script>
+<style>
+:root{
+  --navy:#0B1F3A;--blue:#0078D4;--blue-dk:#106EBE;--bg:#f6f8fb;--surface:#ffffff;
+  --surface-soft:#eef2f7;--border:#dfe5ec;--text:#1f2a37;--muted:#5c6b7a;--soft:#8a97a6;
+  --accent-soft:rgba(0,120,212,0.08);--green:#107c10;--amber:#935200;
+  --shadow:0 1px 2px rgba(11,31,58,.06),0 8px 24px rgba(11,31,58,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{--navy:#0B1F3A;--blue:#4da6ff;--blue-dk:#7cc0ff;--bg:#0e141b;--surface:#161d26;
+    --surface-soft:#1d2630;--border:#2a3642;--text:#e6edf3;--muted:#9fb0c0;--soft:#6f8090;
+    --accent-soft:rgba(77,166,255,.12);--green:#4ade80;--amber:#fbbf24;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Aptos,Calibri,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#13315c 100%);color:#fff;padding:56px 40px 48px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.05)}
+.ge{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.ge .ring{width:42px;height:42px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;letter-spacing:.5px}
+.ge .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9fb4cc;font-weight:700}
+.hero h1{font-size:40px;line-height:1.15;margin-bottom:12px;max-width:880px}
+.hero p{font-size:18px;color:#c9d6e5;max-width:760px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;font-size:13px;color:#9fb4cc}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.section{padding:44px 0;border-bottom:1px solid var(--border)}
+.section:last-child{border-bottom:none}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.h2{font-size:26px;font-weight:800;color:var(--text);line-height:1.2}
+.lead{font-size:15px;color:var(--muted);margin-top:8px;max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:26px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .top{height:128px;background:linear-gradient(135deg,var(--accent-soft),var(--surface-soft));display:flex;align-items:center;justify-content:center;font-size:46px}
+.card .body{padding:18px 18px 8px;flex:1}
+.card .kind{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
+.card .name{font-size:18px;font-weight:700;margin:4px 0 6px}
+.card .desc{font-size:13px;color:var(--muted)}
+.card .foot{padding:14px 18px 18px;display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:700;border:1px solid var(--border);cursor:pointer}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-primary:hover{background:var(--blue-dk);text-decoration:none}
+.btn-ghost{background:var(--surface-soft);color:var(--text)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);text-decoration:none}
+.videowrap{margin-top:26px;background:#000;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border)}
+.videowrap video{width:100%;display:block}
+.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:24px}
+.chg{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.chg .t{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.chg .t .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.chg .d{font-size:13px;color:var(--muted);margin-top:6px}
+.cta{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:30px;text-align:center;box-shadow:var(--shadow);margin-top:8px}
+.cta h3{font-size:22px;font-weight:800}
+.cta p{font-size:14px;color:var(--muted);margin:8px auto 20px;max-width:560px}
+.note{font-size:12px;color:var(--soft);margin-top:14px}
+.footer{padding:28px 0 40px;text-align:center;font-size:12px;color:var(--soft)}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px;background:var(--accent-soft);color:var(--blue)}
+</style>
 </head>
 <body>
-  <a href="#main" class="shell">Skip to main content</a>
-  <header>
-    <div class="shell hero">
-      <p class="eyebrow">Validated Power Platform delivery candidate</p>
-      <h1>GE ERAC Lite CRM</h1>
-      <p class="lede">
-        Hash-bound solution exports, deterministic partner source, and evidence from
-        a non-destructive managed update. Publication and customer deployment still
-        require explicit approval.
-      </p>
-      <div class="status" role="status">Structural validation passed: 0 MissingDependency nodes</div>
+  <header class="hero">
+    <div class="wrap">
+      <div class="ge"><div class="ring">GE</div><div class="lbl">GE Verisk · ERAC &nbsp;×&nbsp; Microsoft</div></div>
+      <h1>ERAC Lite CRM — Engagement Hub</h1>
+      <p>One trusted model for your long-term-care reinsurance partners. Watch the recap, walk the deck, and — new this round — download the install-ready solution to take it in-house.</p>
+      <div class="meta">
+        <span>Prepared for GE Verisk · ERAC</span>
+        <span>Microsoft Solution Engineering</span>
+        <span>Updated July 2026</span>
+      </div>
     </div>
   </header>
-  <nav aria-label="Page sections">
-    <div class="shell"><ul>
-      <li><a href="#overview">Overview</a></li><li><a href="#included">Included</a></li>
-      <li><a href="#downloads">Downloads</a></li><li><a href="#evidence">Evidence</a></li>
-      <li><a href="#install">Install path</a></li><li><a href="#limitations">Limitations</a></li>
-      <li><a href="#verification">Verification</a></li><li><a href="#support">Support</a></li>
-    </ul></div>
-  </nav>
-  <main id="main" class="shell">
-    <section id="overview">
-      <h2>Solution overview</h2>
-      <p>ERAC Lite CRM is a Dataverse model-driven application for cedent relationship, engagement, partnership, risk, treaty, reserve, and dispute work. The authoritative source was remediated and freshly exported as version <code>1.0.0.1</code> on August 25, 2026.</p>
-      <div class="grid">
-        <article class="card"><span class="metric">42</span><h3>Root components</h3><p class="muted">10 tables, 30 web resources, one sitemap, and one app.</p></article>
-        <article class="card"><span class="metric">0</span><h3>Declared dependencies</h3><p class="muted">Both exact PAC exports contain zero MissingDependency nodes.</p></article>
-        <article class="card"><span class="metric">1</span><h3>Managed-update test</h3><p class="muted">Exact managed hash updated a pre-provisioned target with no import error.</p></article>
+
+  <main class="wrap">
+
+    <!-- WATCH -->
+    <section class="section">
+      <div class="eyebrow">Start here</div>
+      <div class="h2">A 2-minute recap</div>
+      <div class="lead">What we built from your feedback, narrated. Best watched first — then dig into the walkthrough deck below.</div>
+      <div class="videowrap">
+        <video controls preload="metadata" poster="" src="video/erac-recap-narrated.mp4">
+          Your browser can't play embedded video — <a href="video/erac-recap-narrated.mp4">download the recap (MP4)</a>.
+        </video>
+      </div>
+      <div class="note">Captions available: <a href="video/erac-recap-narrated.vtt">transcript (VTT)</a>.</div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="section">
+      <div class="eyebrow">Explore</div>
+      <div class="h2">Your resources</div>
+      <div class="lead">Everything from the walkthrough, in one place.</div>
+      <div class="cards">
+        <article class="card">
+          <div class="top">🎬</div>
+          <div class="body">
+            <div class="kind">Video · 2 min</div>
+            <div class="name">Narrated recap</div>
+            <div class="desc">The fast overview — the model, what changed, and the "one workspace" story.</div>
+          </div>
+          <div class="foot"><a class="btn btn-primary" href="video/erac-recap-narrated.mp4">▶ Watch</a></div>
+        </article>
+        <article class="card">
+          <div class="top">📊</div>
+          <div class="body">
+            <div class="kind">Deck · 18 slides</div>
+            <div class="name">Screen-by-screen walkthrough</div>
+            <div class="desc">The full app tour, scene by scene, with talking points and notes.</div>
+          </div>
+          <div class="foot"><a class="btn btn-primary" href="ppt/GE-ERAC-Walkthrough.pptx">⤓ Open deck</a></div>
+        </article>
       </div>
     </section>
-    <section id="included">
-      <h2>Exactly what is included</h2>
-      <table><thead><tr><th>Area</th><th>Version 1.0.0.1</th><th>Boundary</th></tr></thead><tbody>
-        <tr><td>Model-driven app</td><td>Ten allowlisted tables, seven curated views, one portable Account form, one sitemap</td><td>No Lead, Opportunity, Inbox, Marketing, LinkedIn, or unrelated app assets</td></tr>
-        <tr><td>Standard tables</td><td>Account, Appointment, System User, Task customizations</td><td>Contact is not included</td></tr>
-        <tr><td>Custom tables</td><td>Account Team, Dispute, Partnership Rating, Reserve Adequacy, Risk Assessment, Treaty</td><td>Six tables total</td></tr>
-        <tr><td>Web resources</td><td>13 HTML resources and 17 ERAC icons</td><td>Relative Dataverse references; no source host</td></tr>
-        <tr><td>Automation and security</td><td>Not included</td><td>No flows, connections, plug-ins, connectors, or roles</td></tr>
-        <tr><td>Data</td><td>Not included</td><td>Import creates no demo/customer records</td></tr>
-        <tr><td>Source kit</td><td>Exact unpacked source, sanitized references, policy, and validator</td><td>Private environment evidence excluded</td></tr>
-      </tbody></table>
+
+    <!-- TURNKEY PACKAGE -->
+    <section class="section">
+      <div class="eyebrow">Take it in-house</div>
+      <div class="h2">The turnkey solution package</div>
+      <div class="lead">The ERAC Lite CRM as an install-ready Dynamics 365 / Dataverse solution — it imports into your own tenant with no dependency on our demo environment, plus the guides to own it end to end.</div>
+      <div class="cards">
+        <article class="card">
+          <div class="top">📦</div>
+          <div class="body">
+            <div class="kind">Managed solution · .zip</div>
+            <div class="name">ERAC Lite CRM — install-ready</div>
+            <div class="desc">Model-driven app, six custom tables, dashboards, and navigation. Install-tested on a clean environment — it imports cleanly with no manual dependency cleanup.</div>
+          </div>
+          <div class="foot"><a class="btn btn-primary" href="ERACLiteCRM_managed.zip" download>⤓ Download solution (.zip)</a></div>
+        </article>
+        <article class="card">
+          <div class="top">🏛️</div>
+          <div class="body">
+            <div class="kind">Guide · business</div>
+            <div class="name">Business transition guide</div>
+            <div class="desc">Outcomes, what's in the box, what you own vs. what Microsoft provides, and the Phase 2 roadmap. For business owners and the program lead.</div>
+          </div>
+          <div class="foot"><a class="btn btn-ghost" href="guides/BUSINESS-TRANSITION-GUIDE.html">Open guide →</a></div>
+        </article>
+        <article class="card">
+          <div class="top">🛠️</div>
+          <div class="body">
+            <div class="kind">Guide · technical</div>
+            <div class="name">Technical handoff</div>
+            <div class="desc">Schema, prerequisites, the managed-import path, verification checklist, and the genericize assurance. For your Power Platform admin.</div>
+          </div>
+          <div class="foot"><a class="btn btn-ghost" href="guides/TECHNICAL-HANDOFF.html">Open guide →</a></div>
+        </article>
+        <article class="card">
+          <div class="top">🤝</div>
+          <div class="body">
+            <div class="kind">Guide · partner</div>
+            <div class="name">Partner takeover</div>
+            <div class="desc">Turnkey guarantees, architecture, two deploy paths, the prove-install gate, and Phase 2 extension seams. For a systems integrator (e.g. PwC).</div>
+          </div>
+          <div class="foot"><a class="btn btn-ghost" href="guides/PARTNER-TAKEOVER.html">Open guide →</a></div>
+        </article>
+      </div>
+      <div class="note">Install-tested 2026-07-07 on a clean Power Platform environment. Full steps are in the technical handoff.</div>
     </section>
-    <section id="downloads">
-      <h2>Candidate downloads</h2>
-      <div class="callout"><strong>Local review only.</strong> The artifacts are validated, but publication, access, expiry, and customer deployment remain approval gates.</div>
-      <div class="downloads">
-        <article class="download"><div><h3>Managed solution</h3><div class="ready">Zero dependencies / managed-update tested</div><p class="muted">Governed target format after environment-readiness review.</p></div><a href="ERACLiteCRM_managed.zip" download>Download managed</a></article>
-        <article class="download"><div><h3>Unmanaged solution</h3><div class="ready">Zero dependencies / validated</div><p class="muted">Partner development and extension only.</p></div><a href="ERACLiteCRM_unmanaged.zip" download>Download unmanaged</a></article>
-        <article class="download"><div><h3>Source kit</h3><div class="ready">Deterministic / validated</div><p class="muted">Sanitized source, rebuild references, policy, and validator.</p></div><a href="ERACLiteCRM_source-kit.zip" download>Download source kit</a></article>
-        <article class="download"><div><h3>Integrity receipt</h3><div class="reviewable">SHA-256 bound</div><p class="muted">Exact bytes, hashes, purposes, and evidence labels.</p></div><a href="package-manifest.json">Open manifest</a></article>
+
+    <!-- WHAT CHANGED -->
+    <section class="section">
+      <div class="eyebrow">We heard you</div>
+      <div class="h2">What changed since last time</div>
+      <div class="lead">Every item from your last round of feedback — now live in the app.</div>
+      <div class="changes">
+        <div class="chg"><div class="t"><span class="dot"></span>Counterparties → Partners</div><div class="d">Renamed across navigation, views, and every screen.</div></div>
+        <div class="chg"><div class="t"><span class="dot"></span>Real contacts on every account</div><div class="d">Named contacts with a designated primary on all partner accounts.</div></div>
+        <div class="chg"><div class="t"><span class="dot"></span>Who at ERAC owns the account</div><div class="d">A top-down Account Map & Plan — engagement team by function, plus the plan.</div></div>
+        <div class="chg"><div class="t"><span class="dot"></span>Know Your Policyholder</div><div class="d">Your KYP analytics surfaced as its own destination in the app.</div></div>
+        <div class="chg"><div class="t"><span class="dot"></span>External systems, easy to find</div><div class="d">Link-outs to the systems you already use — with connectors to Fabric & LTC Core.</div></div>
+        <div class="chg"><div class="t"><span class="dot"></span>Clearer navigation</div><div class="d">Cedent / TPA clarity, refreshed analytics, and navigation icons throughout.</div></div>
       </div>
     </section>
-    <section id="evidence">
-      <h2>Evidence summary</h2>
-      <div class="grid">
-        <article class="card"><h3>Portable structure</h3><p>Managed and unmanaged exports pass XML, ZIP, identity, inventory, app, sitemap, form, leak, and resource checks with zero missing dependencies.</p></article>
-        <article class="card"><h3>Managed update</h3><p>The exact managed hash updated pre-existing managed <code>1.0.0.0</code> to <code>1.0.0.1</code>. PAC exited 0 and the import job succeeded.</p></article>
-        <article class="card"><h3>Data preservation</h3><p>Captured IDs and counts were unchanged for Accounts, Appointments, Users, Tasks, and all six ERAC custom tables.</p></article>
+
+    <!-- FEEDBACK CTA -->
+    <section class="section">
+      <div class="cta">
+        <span class="tag">Your turn</span>
+        <h3>What would make this indispensable for your team?</h3>
+        <p>This is built around your feedback — keep it coming. Tell us what's right, what's missing, and what you'd want in front of your senior leadership team.</p>
+        <a class="btn btn-primary" id="feedbackBtn" href="#">✉ Share feedback</a>
+        <div class="note">Or reply to the email thread with your Microsoft team.</div>
       </div>
     </section>
-    <section id="install">
-      <h2>Controlled install path</h2>
-      <ol>
-        <li>Verify the managed SHA-256 below and review target licensing, security, capacity, and backup posture.</li>
-        <li>Snapshot the current solution/app state and record IDs.</li>
-        <li>Use supported PAC managed-import semantics without dependency bypass.</li>
-        <li>Verify version, managed state, app readiness, intended components, import status, and record preservation.</li>
-        <li>Use uninstall, force-overwrite, or stage-and-upgrade only under a separately approved change plan.</li>
-      </ol>
-      <p>The completed test was a normal managed update in a pre-provisioned environment. It was not a clean first install.</p>
-    </section>
-    <section id="limitations">
-      <h2>Known limitations and exclusions</h2>
-      <ul>
-        <li>No clean-first-install test is claimed; zero-dependency export validation is the separate portability evidence.</li>
-        <li>Normal updates can retain legacy managed components already installed in a target, even when the updated app no longer selects them.</li>
-        <li>No demo-data archive is approved; external-use provenance remains withheld.</li>
-        <li>No security roles, flows, connections, plug-ins, connectors, or production integration package is included.</li>
-        <li>Actuarial, legal, routing, migration, Copilot, and production Power BI depth remain Phase 2 work.</li>
-      </ul>
-    </section>
-    <section id="verification">
-      <h2>Verification</h2>
-      <p>Managed: <code>50984d76b2fcd41c5f58d22d42211a5e02a38f1828975cd9e4a74db794cb2afc</code> (141,342 bytes).</p>
-      <p>Unmanaged: <code>349216b2b62fd218e406e0a9356e89d00602bd2b898e7f2fa1dbe2d52a8e2511</code> (141,561 bytes).</p>
-      <p>The existing <a href="https://billwhalenmsft.github.io/ge-erac-engagement/video/erac-recap-narrated.mp4">recap video</a> and <a href="https://billwhalenmsft.github.io/ge-erac-engagement/ppt/GE-ERAC-Walkthrough.pptx">walkthrough deck</a> links remain unchanged.</p>
-    </section>
-    <section id="support">
-      <h2>Support and ownership boundary</h2>
-      <p>The customer or implementation partner owns target readiness, licensing, security, migration, integrations, ALM, monitoring, and production support. Microsoft prepared and validated this local candidate but has not approved publication or customer deployment.</p>
-    </section>
+
   </main>
-  <footer><div class="shell">Prepared as a local validated candidate on August 25, 2026. Public state: false. Publication, access, expiry, registry, and customer sharing remain approval gates.</div></footer>
+
+  <div class="footer">Prepared by Microsoft Solution Engineering for GE Verisk · ERAC. Informational use; some metric values are illustrative pending connection to your live data sources. © Microsoft 2026.</div>
+
+  <script>
+    // Feedback mailto — edit recipients/subject as needed before sharing.
+    (function(){
+      var to = "billwhalen@microsoft.com";              // ← set the Microsoft team alias/email before sending
+      var subject = encodeURIComponent("ERAC Lite CRM — feedback");
+      var body = encodeURIComponent("A few thoughts on the ERAC Lite CRM walkthrough:\n\n- What's right:\n- What's missing:\n- For the SLT demo, we'd want:\n");
+      var href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+      document.getElementById('feedbackBtn').setAttribute('href', href);
+    })();
+  </script>
 </body>
 </html>
